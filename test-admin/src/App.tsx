@@ -1,9 +1,14 @@
 import {
   Admin,
   Resource,
-  ListGuesser,
-  EditGuesser,
-  ShowGuesser,
 } from "react-admin";
+import { dataProvider } from "./provider";
+import { BaseList } from "./components";
 
-export const App = () => <Admin></Admin>;
+console.log('====dataProvider :', dataProvider)
+export const App = () => 
+<Admin
+  dataProvider={dataProvider}
+>
+  <Resource name="base" list={BaseList}/>
+</Admin>;
