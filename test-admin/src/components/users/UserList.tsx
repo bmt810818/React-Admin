@@ -1,4 +1,4 @@
-import { List, Datagrid, TextField, EmailField, Show, SimpleShowLayout } from "react-admin";
+import { List, Datagrid, TextField, EmailField } from "react-admin";
 
 export const UserList = () => (
     <List>
@@ -15,10 +15,3 @@ export const UserList = () => (
     </List>
 );
 
-export const UserShow = () => {
-    <Show>
-      <SimpleShowLayout>
-      <TextField source="id" />
-      </SimpleShowLayout>
-    </Show>
-}
