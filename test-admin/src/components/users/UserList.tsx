@@ -1,7 +1,7 @@
 import { List, Datagrid, TextField, EmailField } from "react-admin";
 
 export const UserList = () => (
-    <List>
+    <List title="Danh sách người dùng">
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="name" />
@@ -13,5 +13,5 @@ export const UserList = () => (
             <TextField source="company.name" />
         </Datagrid>
     </List>
-);
+)
 

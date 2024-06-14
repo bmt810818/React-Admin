@@ -8,7 +8,9 @@ import {
 export const UserShow = () => (
     <Show>
         <SimpleShowLayout>
-            <TextField source="id" />
+            <TextField source="name" />
+            <TextField source="email" />
+            <TextField source="username" />
         </SimpleShowLayout>
     </Show>
-);
+)
