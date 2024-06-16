@@ -3,12 +3,12 @@ import { Route } from "react-router-dom";
 import { UserEdit, UserList, UserShow } from './components/users';
 import { dataProvider } from './provider/dataProvider';
 import { UserCreate } from './components/users/UserCreate';
-import { MyLayout } from './MyLayout';
-import { User } from './constants/common.constant';
+import { SettingList } from './components/settings/SettingList';
 
 
 export const App = () => (
     <Admin 
+      title={"Welcome to Toan Bui"}
       dataProvider={dataProvider}
     >
       <Resource 
@@ -17,6 +17,10 @@ export const App = () => (
         show={UserShow}
         edit={UserEdit}
         create={UserCreate}
+      />
+      <Resource 
+        name={"settings"}
+        show={SettingList}
       />
       <CustomRoutes>
         <Route path="/list" element={<UserList />}/>
