@@ -39,3 +39,5 @@ You can sign in to the application with the following usernames and password:
 - janedoe / password
 - johndoe / password
 
+Author: Toan Bui
+
