@@ -7,12 +7,13 @@ import {
 } from "react-admin";
 import { Layout } from "./Layout";
 import { dataProvider } from "./dataProvider";
+import UserList from "./components/users/List";
 
 export const App = () => (
   <Admin layout={Layout} dataProvider={dataProvider}>
     <Resource
       name="users"
-      list={ListGuesser}
+      list={UserList}
       edit={EditGuesser}
       show={ShowGuesser}
     />

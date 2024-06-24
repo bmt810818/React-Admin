@@ -1,0 +1,330 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.3.1",
+  "deps": {
+    "nx": "19.3.1"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".gitignore",
+        "hash": "2110945332964774953"
+      },
+      {
+        "file": ".idea/.gitignore",
+        "hash": "16259663310133185705"
+      },
+      {
+        "file": ".idea/React-Admin.iml",
+        "hash": "17628044544001142833"
+      },
+      {
+        "file": ".idea/inspectionProfiles/Project_Default.xml",
+        "hash": "8912173605315939135"
+      },
+      {
+        "file": ".idea/modules.xml",
+        "hash": "12024472240237210256"
+      },
+      {
+        "file": ".idea/vcs.xml",
+        "hash": "13076890194361308264"
+      },
+      {
+        "file": ".nx/nxw.js",
+        "hash": "11254603345854076312"
+      },
+      {
+        "file": "README.md",
+        "hash": "5528083105696496523"
+      },
+      {
+        "file": "nx",
+        "hash": "17165975525224888679"
+      },
+      {
+        "file": "nx.bat",
+        "hash": "16119536321561623970"
+      },
+      {
+        "file": "nx.json",
+        "hash": "7111735501627103681"
+      },
+      {
+        "file": "test-admin-1/.env",
+        "hash": "3802766117217465548"
+      },
+      {
+        "file": "test-admin-1/.eslintrc.js",
+        "hash": "2841258286548489144"
+      },
+      {
+        "file": "test-admin-1/.gitignore",
+        "hash": "13046175384202504187"
+      },
+      {
+        "file": "test-admin-1/README.md",
+        "hash": "15509439077609209469"
+      },
+      {
+        "file": "test-admin-1/index.html",
+        "hash": "6871351178931581209"
+      },
+      {
+        "file": "test-admin-1/package.json",
+        "hash": "4517968140891193392"
+      },
+      {
+        "file": "test-admin-1/prettier.config.js",
+        "hash": "14016656384135166477"
+      },
+      {
+        "file": "test-admin-1/public/favicon.ico",
+        "hash": "1377515129098935223"
+      },
+      {
+        "file": "test-admin-1/public/manifest.json",
+        "hash": "2074576562281530788"
+      },
+      {
+        "file": "test-admin-1/src/App.tsx",
+        "hash": "12500028628074780073"
+      },
+      {
+        "file": "test-admin-1/src/authProvider.ts",
+        "hash": "10925329473255050896"
+      },
+      {
+        "file": "test-admin-1/src/components/errors/Error.tsx",
+        "hash": "14290232928143404386"
+      },
+      {
+        "file": "test-admin-1/src/components/loadings/Loading.tsx",
+        "hash": "9058926078320269729"
+      },
+      {
+        "file": "test-admin-1/src/components/users/UserProfile.tsx",
+        "hash": "8826533181292319729"
+      },
+      {
+        "file": "test-admin-1/src/dataProvider.ts",
+        "hash": "11102209389767893304"
+      },
+      {
+        "file": "test-admin-1/src/index.tsx",
+        "hash": "17584918882069514768"
+      },
+      {
+        "file": "test-admin-1/src/users.json",
+        "hash": "14112248683031459172"
+      },
+      {
+        "file": "test-admin-1/src/vite-env.d.ts",
+        "hash": "12946363841406869089"
+      },
+      {
+        "file": "test-admin-1/tsconfig.json",
+        "hash": "3664978063588679595"
+      },
+      {
+        "file": "test-admin-1/vite.config.ts",
+        "hash": "128456752911332162"
+      },
+      {
+        "file": "test-admin-1/yarn.lock",
+        "hash": "3993028241264216504"
+      },
+      {
+        "file": "test-admin-2/.env",
+        "hash": "9725701093417446957"
+      },
+      {
+        "file": "test-admin-2/.eslintrc.js",
+        "hash": "4893146833325163470"
+      },
+      {
+        "file": "test-admin-2/.gitignore",
+        "hash": "13046175384202504187"
+      },
+      {
+        "file": "test-admin-2/README.md",
+        "hash": "7205608416996839629"
+      },
+      {
+        "file": "test-admin-2/index.html",
+        "hash": "13566516073603254580"
+      },
+      {
+        "file": "test-admin-2/package.json",
+        "hash": "5073549272222088831"
+      },
+      {
+        "file": "test-admin-2/prettier.config.js",
+        "hash": "14016656384135166477"
+      },
+      {
+        "file": "test-admin-2/public/favicon.ico",
+        "hash": "1377515129098935223"
+      },
+      {
+        "file": "test-admin-2/public/manifest.json",
+        "hash": "13067329427238832381"
+      },
+      {
+        "file": "test-admin-2/src/App.tsx",
+        "hash": "14600094500006187396"
+      },
+      {
+        "file": "test-admin-2/src/Layout.tsx",
+        "hash": "8443924764946954040"
+      },
+      {
+        "file": "test-admin-2/src/components/users/List.tsx",
+        "hash": "211025265984768309"
+      },
+      {
+        "file": "test-admin-2/src/components/users/index.tsx",
+        "hash": "9833476423785742156"
+      },
+      {
+        "file": "test-admin-2/src/dataProvider.ts",
+        "hash": "11102209389767893304"
+      },
+      {
+        "file": "test-admin-2/src/index.tsx",
+        "hash": "17584918882069514768"
+      },
+      {
+        "file": "test-admin-2/src/vite-env.d.ts",
+        "hash": "12946363841406869089"
+      },
+      {
+        "file": "test-admin-2/tsconfig.json",
+        "hash": "3664978063588679595"
+      },
+      {
+        "file": "test-admin-2/vite.config.ts",
+        "hash": "128456752911332162"
+      },
+      {
+        "file": "test-admin-2/yarn.lock",
+        "hash": "8469688117831145107"
+      },
+      {
+        "file": "test-admin/.gitignore",
+        "hash": "987422939859577920"
+      },
+      {
+        "file": "test-admin/README.md",
+        "hash": "10393051735317017222"
+      },
+      {
+        "file": "test-admin/package-lock.json",
+        "hash": "6060818117423198597"
+      },
+      {
+        "file": "test-admin/package.json",
+        "hash": "11852849254372818591"
+      },
+      {
+        "file": "test-admin/prettier.config.js",
+        "hash": "14016656384135166477"
+      },
+      {
+        "file": "test-admin/public/favicon.ico",
+        "hash": "1377515129098935223"
+      },
+      {
+        "file": "test-admin/public/manifest.json",
+        "hash": "17558715079441524112"
+      },
+      {
+        "file": "test-admin/src/App.tsx",
+        "hash": "12088984824505274124"
+      },
+      {
+        "file": "test-admin/src/Dashboard.tsx",
+        "hash": "11979547585108131410"
+      },
+      {
+        "file": "test-admin/src/MyLayout.tsx",
+        "hash": "1418378402613208179"
+      },
+      {
+        "file": "test-admin/src/MyMenu.tsx",
+        "hash": "3378168203289922678"
+      },
+      {
+        "file": "test-admin/src/components/NotFound.tsx",
+        "hash": "8743802218257771536"
+      },
+      {
+        "file": "test-admin/src/components/i18nProvider.js",
+        "hash": "5986436259335500352"
+      },
+      {
+        "file": "test-admin/src/components/settings/SettingList.tsx",
+        "hash": "18323108673138621090"
+      },
+      {
+        "file": "test-admin/src/components/settings/index.tsx",
+        "hash": "11161735128598951702"
+      },
+      {
+        "file": "test-admin/src/components/users/UserCreate.tsx",
+        "hash": "11000476687840478120"
+      },
+      {
+        "file": "test-admin/src/components/users/UserEdit.tsx",
+        "hash": "808955301499087644"
+      },
+      {
+        "file": "test-admin/src/components/users/UserList.tsx",
+        "hash": "1470411910749877447"
+      },
+      {
+        "file": "test-admin/src/components/users/UserShow.tsx",
+        "hash": "11784967562230190374"
+      },
+      {
+        "file": "test-admin/src/components/users/index.tsx",
+        "hash": "840023002114396530"
+      },
+      {
+        "file": "test-admin/src/constants/common.constant.tsx",
+        "hash": "9508694138204016692"
+      },
+      {
+        "file": "test-admin/src/provider/authProvider.tsx",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "test-admin/src/provider/dataProvider.tsx",
+        "hash": "5201252162909220215"
+      },
+      {
+        "file": "test-admin/src/provider/index.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "test-admin/src/vite-env.d.ts",
+        "hash": "12946363841406869089"
+      },
+      {
+        "file": "test-admin/tsconfig.json",
+        "hash": "3664978063588679595"
+      },
+      {
+        "file": "test-admin/vite.config.ts",
+        "hash": "128456752911332162"
+      },
+      {
+        "file": "test-admin/yarn.lock",
+        "hash": "16939293862096644143"
+      }
+    ],
+    "projectFileMap": {}
+  }
+}
