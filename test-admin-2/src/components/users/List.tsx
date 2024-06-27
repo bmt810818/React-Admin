@@ -4,6 +4,7 @@ const UserList = () => (
 <List>
   <TextField source="id"/>
   <TextField source="name"/>
+  <TextField source="status"/>
 </List>
 );
 
