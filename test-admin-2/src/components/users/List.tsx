@@ -1,9 +1,12 @@
-import { List, TextField } from "react-admin";
+import { Datagrid, List, TextField } from "react-admin";
 
 const UserList = () => (
 <List>
-  <TextField source="id"/>
-  <TextField source="name"/>
+  <Datagrid>
+    <TextField source="id"/>
+    <TextField source="name"/>
+    <TextField source="status"/>
+  </Datagrid>
 </List>
 );
 

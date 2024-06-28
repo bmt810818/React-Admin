@@ -1,33 +1,27 @@
 import {
   Admin,
   Resource,
-  ListGuesser,
-  EditGuesser,
-  ShowGuesser,
 } from "react-admin";
 import { Layout } from "./Layout";
-import { dataProvider } from "./dataProvider";
 import UserList from "./components/users/List";
+// import dataProvider from "./dataProvider";
+import simpleRestProvider from "ra-data-simple-rest";
+import jsonServerProvider from 'ra-data-json-server';
+
+
+
+const dataProvider = jsonServerProvider('http://localhost:8080');
+
 
 export const App = () => (
-  <Admin layout={Layout} dataProvider={dataProvider}>
+  <Admin 
+    layout={Layout}
+    loginPage
+    dataProvider={dataProvider} 
+  >
     <Resource
-      name="users"
+      name="toanbui"
       list={UserList}
-      edit={EditGuesser}
-      show={ShowGuesser}
-    />
-    <Resource
-      name="posts"
-      list={ListGuesser}
-      edit={EditGuesser}
-      show={ShowGuesser}
-    />
-    <Resource
-      name="settings"
-      list={ListGuesser}
-      edit={EditGuesser}
-      show={ShowGuesser}
     />
   </Admin>
 );
