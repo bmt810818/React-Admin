@@ -5,3 +5,7 @@
 # Tôi có 2 câu hỏi:
 ## 1. Tại sao phải có @CrossOrigin(origins = "") thì React-Admin mới gọi được API? @CrossOrigin sinh ra để giải quyết vấn đề gì?
 ## 2. Nguyên nhân gây ra lỗi "The X-Total-Count header is missing in the HTTP Response" là gì? Có bao nhiêu cách giải quyết? Cách tốt nhất để xử lý cho context này là gì?
+
+# Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "toanbui"
+- Lỗi xảy ra khi tôi cố kết nối Springboot với Postgres mới (tôi tạo mới 1 container khác)
+- Tôi thử tắt 1 container khác có image trùng với container trên, và vấn đề đã được giải quyết, vậy lý do là gì?
