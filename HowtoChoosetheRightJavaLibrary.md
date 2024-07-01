@@ -25,6 +25,7 @@ link: https://mergebase.com/blog/java-libraries/
 - Đảm bảo bạn hiểu loại giấy phép của thư viện
 - Đánh giá khả năng tương thích với mọi giấy phép hiện có liên quan đến dự án
 - Xem xét các tác động pháp lý tiềm ẩn của việc chọn loại giấy phép (và liệu nó có ảnh hưởng đến những cân nhắc pháp lý hiện tại của bạn hay không)
+- Giấy phép nguồn mở quy định các điều khoản sử dụng và việc vi phạm chúng có thể dẫn đến các khoản phạt nặng và thiệt hại về mặt danh tiếng
 
 # 6. Đảm bảo nó cung cấp các tích hợp và khả năng tương thích phù hợp cho dự án:
 - Đánh giá mức độ dễ tích hợp với cơ sở mã hiện có của bạn để đảm bảo khả năng tương thích với các lib hoặc frameworks khác
@@ -38,6 +39,34 @@ link: https://mergebase.com/blog/java-libraries/
 - Khi đã thu hẹp các tùy chọn thư viện Java của mình xuống còn hai hoặc ba đối thủ => conduct thorough testing in a controlled environment
 - Xem xét các tình huống sử dụng trong thế giới thực và các trường hợp khó khăn
 - Bằng cách tiến hành kiểm tra và xác thực nghiêm ngặt, bạn có thể phát hiện các lỗ hổng hoặc sự cố tiềm ẩn trước khi chúng tác động đến môi trường sản xuất của mình
+
+Dependency hell:
+*Đôi khi sẽ là vấn đề nếu một ứng dụng chỉ sử dụng một phần nhỏ của một thư viện lớn (có thể giải quyết bằng cách tái cấu trúc mã)
+*Đôi khi, trong chuỗi dài các phần dependencies này, xung đột nảy sinh khi cần có hai phiên bản khác nhau của cùng một gói(khi có thể, vấn đề này sẽ được giải quyết bằng cách cho phép cài đặt đồng thời các phần phụ thuộc khác nhau)
+*Đôi khi, Nếu app1 phụ thuộc vào libfoo 1.2 và app2 phụ thuộc vào libfoo 1.3 và không thể cài đặt đồng thời các phiên bản libfoo khác nhau thì không thể sử dụng đồng thời app1 và app2
+*Đôi khi, Nếu App A phụ thuộc và không thể chạy nếu không có phiên bản cụ thể của App B, nhưng App B lại phụ thuộc và không thể chạy nếu không có phiên bản cụ thể của App A, thì việc nâng cấp bất kỳ App nào sẽ làm hỏng App khác. Tác động của nó có thể khá nặng nề nếu ảnh hưởng đến hệ thống cốt lõi
+Ví dụ: trình quản lý gói (A), yêu cầu run-time library (B) cụ thể để hoạt động, (A) có thể tự hỏng giữa quá trình khi nâng cấp thư viện (B) này sang version tiếp theo
+
+# Suy nghĩ về dependencies:
+## Lý do tại sao @Service và @Repository bị hỏng khi xóa spring-boot-starter-web?
+- spring-boot-starter-web bao gồm spring-boot-starter, và spring-boot-starter bao gồm spring-context. Khi bạn xóa spring-boot-starter-web, bạn có thể đã vô tình loại bỏ spring-context khỏi classpath của bạn.
+- Khái niệm này gọi là phụ thuộc bắc cầu (transitive dependency). Trong trường hợp của spring-boot-starter-web, nó kéo theo các phụ thuộc khác mà các phụ thuộc này lại kéo theo những phụ thuộc khác nữa, tạo thành một chuỗi phụ thuộc bắc cầu.
+- Và khi giải quyết bằng cách implementation 'org.springframework:spring-context:5.3.9' để dùng được @Service, @Repository, thì @RestController, @GetMapping, ... lại hỏng vì nó nằm trong gói spring-boot-starter-web chứ không phải trong org.springframework:spring-context:5.3.9
+- Vì thế nên từ đầu hướng dẫn đã yêu cầu implementation 'org.springframework.boot:spring-boot-starter-web'
+
+# Khi cố hiểu về org.springframework.boot:spring-boot-starter-data-jpa, tôi cần làm rõ JPA là gì?
+## Lịch sử ra đời
+- Java Persistence API (JPA): JPA được giới thiệu bởi Oracle như là một phần của Java EE 5 vào năm 2006, nhằm cung cấp một API tiêu chuẩn để quản lý dữ liệu trong các ứng dụng Java.
+- Spring Framework: Spring Framework ra đời vào đầu những năm 2000, ban đầu tập trung vào việc đơn giản hóa phát triển các ứng dụng doanh nghiệp phức tạp.
+- Spring Data JPA là một phần của dự án Spring Data, ra mắt vào khoảng năm 2010-2011, nhằm mở rộng JPA với các tính năng như truy vấn động, custom repository, và hỗ trợ cho nhiều loại cơ sở dữ liệu.
+- Spring Boot được giới thiệu vào năm 2014 nhằm đơn giản hóa việc tạo các ứng dụng Spring. Nó cung cấp một cách tiếp cận mới để cấu hình và chạy các ứng dụng Spring, bằng cách cung cấp các “starter” (các gói thư viện cấu hình sẵn), trong đó có spring-boot-starter-data-jpa.
+## Tính năng
+- Annotation Entities (@Entity, @Table, @Id, @GeneratedValue)
+- Annotation Columns (@Column, @Transient)
+- Quản lý mối quan hệ (@ManyToOne, @OneToMany, @ManyToMany, @OneToOne)
+- Repository Interfaces (CrudRepository, JpaRepository, PagingAndSortingRepository): cấp các phương thức tiêu chuẩn để thao tác với cơ sở dữ liệu như lưu trữ, lấy dữ liệu, xóa, và cập nhật.
+- Query Methods: Spring Data JPA sẽ tự động triển khai phương thức có tên như findBy..., findAllBy..., deleteBy... dựa trên tên của phương thức.
+
 
 
 ## Tổng kết:
