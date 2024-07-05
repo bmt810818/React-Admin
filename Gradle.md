@@ -3,19 +3,22 @@
 # Khi gõ lệnh ./gradlew.bat :{sub-application}:bootrun, quá trình hoạt động của Gradle sẽ diễn ra theo các bước chính như sau:
 
 ## 1. Project Structure
-settings.gradle: File này định nghĩa các dự án con (sub-projects) và cấu trúc của toàn bộ dự án.
-sub-project-1 và sub-project-2: Mỗi dự án con có file build.gradle riêng, chứa cấu hình build và mã nguồn (source code).
+- settings.gradle: File này định nghĩa các dự án con (sub-projects) và cấu trúc của toàn bộ dự án.
+- Mỗi dự án con có file build.gradle riêng, chứa cấu hình build và mã nguồn (source code):
+  ```
+  sub-project-1 và sub-project-2 là 2 dự án con
+  ```
 ## 2. Build Flow
-Cache: Gradle sử dụng cache để lưu trữ các kết quả build nhằm tăng tốc độ cho các lần build tiếp theo.
-Build Flow: Đây là quá trình chính mà Gradle thực hiện các nhiệm vụ (tasks) được định nghĩa trong các file build.gradle.
+- Cache: Gradle sử dụng cache để lưu trữ các kết quả build nhằm tăng tốc độ cho các lần build tiếp theo.
+- Build Flow: Đây là quá trình chính mà Gradle thực hiện các nhiệm vụ (tasks) được định nghĩa trong các file build.gradle.
 ## 3. Dependency Management
-Dependency Manager: Gradle quản lý các dependencies của dự án thông qua Dependency Manager. Nó sẽ tải các dependencies cần thiết từ các kho lưu trữ (repositories).
+- Dependency Manager: Gradle quản lý các dependencies của dự án thông qua Dependency Manager. Nó sẽ tải các dependencies cần thiết từ các kho lưu trữ (repositories).
 ## 4. Plugins
-Plugins: Gradle sử dụng các plugin để mở rộng chức năng. Ví dụ, plugin Spring Boot sẽ thêm các nhiệm vụ liên quan đến Spring Boot vào build flow.
+- Plugins: Gradle sử dụng các plugin để mở rộng chức năng. Ví dụ, plugin Spring Boot sẽ thêm các nhiệm vụ liên quan đến Spring Boot vào build flow.
 ## 5. Execution of Tasks
-Tasks: Các nhiệm vụ như compile, test, package... được định nghĩa trong các file build.gradle. Khi bạn gõ lệnh ./gradlew.bat :subapplication:bootrun, Gradle sẽ thực hiện các nhiệm vụ này theo thứ tự phù hợp.
+- Tasks: Các nhiệm vụ như compile, test, package... được định nghĩa trong các file build.gradle. Khi bạn gõ lệnh ./gradlew.bat :subapplication:bootrun, Gradle sẽ thực hiện các nhiệm vụ này theo thứ tự phù hợp.
 ## 6. Output
-Output: Kết quả của quá trình build bao gồm các file đầu ra như JAR, APK, ZIP, WAR...
+- Output: Kết quả của quá trình build bao gồm các file đầu ra như JAR, APK, ZIP, WAR...
 
 ![jar-apk-zip-war](https://velog.velcdn.com/images/ghkdwp018/post/7f292fe8-9a7b-43e4-9861-a471bb5f8002/image.png)
 
@@ -80,7 +83,7 @@ plugins {
   ```
   ./gradlew tasks
   ```
-  - Nhiều khi, một tác vụ yêu cầu một tác vụ khác chạy trước.
-- Ví dụ: Để Gradle thực thi tác vụ **build**, trước tiên mã Java phải được biên dịch. Vì vậy, tác vụ **build** phụ thuộc vào tác vụ biên dịch Java
-- Điều này có nghĩa là tác vụ biên dịch Java sẽ chạy trước tác vụ xây dựng
-- Các build script có thể tùy ý xác định dependencies của tác vụ. Sau đó, Gradle sẽ tự động xác định thứ tự thực hiện nhiệm vụ.
+  - Nhiều khi, một task yêu cầu một task khác chạy trước.
+- Ví dụ: Để Gradle thực thi task **build**, trước tiên mã Java phải được biên dịch. Vì vậy, task **build** phụ thuộc vào task biên dịch Java
+- Điều này có nghĩa là task biên dịch Java sẽ chạy trước task build
+- Các build script có thể tùy ý xác định dependencies của task. Sau đó, Gradle sẽ tự động xác định thứ tự thực hiện task.
