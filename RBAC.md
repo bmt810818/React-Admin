@@ -1,0 +1,1 @@
+- Khi lần đầu đọc đoạn PasswordEncoder, tôi biết mã đó trông như thế nào nhưng lại không biết nó nên đặt ở đâu. Sau một hồi research, tôi biết nó nên đặt ở đâu nhưng tôi lại không biết tại sao nó lại ở đó
