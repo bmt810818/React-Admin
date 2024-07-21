@@ -1,14 +1,21 @@
-import { Edit, required, TextInput } from "react-admin";
+import { ThemeProvider } from "@mui/material";
+import { RichTextInput } from "ra-input-rich-text";
+import {Edit, required, SimpleForm, TextInput} from "react-admin";
+import BaseTheme from "../../constants/themes/BaseTheme";
 
 const GeneticEdit = () => (
-  <Edit>
+<ThemeProvider theme={BaseTheme}>
+  <Edit title={"Cập nhật mã di truyền"}>
+    <SimpleForm>
     <TextInput source="name" validate={[required()]} />
-    <TextInput source="image" validate={[required()]} />
-    <TextInput source="dna_code" validate={[required()]} />
-    <TextInput source="rna_code" validate={[required()]} />
-    <TextInput source="status" validate={[required()]} />
-    <TextInput source="describe" validate={[required()]} />
+      <TextInput source="code" validate={[required()]} />
+      <TextInput source="status" validate={[required()]} />
+      <RichTextInput source="description"/>
+      <TextInput source="positive" validate={[required()]} />
+      <TextInput source="negative" validate={[required()]} />
+    </SimpleForm>
   </Edit>
+  </ThemeProvider>
 )
 
 export default GeneticEdit
